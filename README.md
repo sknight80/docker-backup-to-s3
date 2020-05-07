@@ -24,6 +24,7 @@ Docker container that periodically backups files to Amazon S3 using [s3cmd sync]
 * `-e PARAMS="--dry-run"`: parameters to pass to the sync command ([full list here](http://s3tools.org/usage)).
 * `-e DATA_PATH=/data/`: container's data folder. Default is `/data/`. Should end with trailing slash.
 * `-e 'CRON_SCHEDULE=0 1 * * *'`: specifies when cron job starts ([details](http://en.wikipedia.org/wiki/Cron)). Default is `0 1 * * *` (runs every day at 1:00 am).
+* `-e DATE_FOLDER=%Y-%m-%d-%H`: date pattern for subfolders. Useful for maintaining multiple versions. Default doesn't create any folders.
 * `no-cron`: run container once and exit (no cron scheduling).
 
 ### Examples:
